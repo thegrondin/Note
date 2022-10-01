@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const chokidar = require('chokidar');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -11,6 +12,16 @@ function createWindow () {
   })
 
   win.loadFile('public/index.html')
+
+
+  const watcher = chokidar.watch('dist/bundle.js', {
+    ignored: /(^|[\/\\])\../, // ignore dotfiles
+    persistent: true
+  });
+
+  watcher.on('change', path => {
+    win.reload();
+  })
 }
 
 app.whenReady().then(() => {
@@ -29,10 +40,3 @@ app.on('window-all-closed', () => {
   }
 })
 
-try {
-  require('electron-reloader')(module, {
-    ignore: "/src"
-  });
-} catch {
-  console.log("cannot load electron-reloader");
-}

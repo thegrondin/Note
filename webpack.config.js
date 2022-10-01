@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -31,12 +32,11 @@ module.exports = {
       directory: path.join(__dirname, "public/")
     },
     port: 3000,
-    hot: true,
     compress: true,
-    setupMiddlewares(middlewares) {
-      console.log("TEST")
-      return middlewares;
-    }
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new WriteFilePlugin({
+      test: /^(?!.*(hot)).*/,
+    })]
 };
