@@ -3,6 +3,8 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const chokidar = require('chokidar');
+const { protocol } = require('electron');
+const fs = require('fs');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -21,19 +23,25 @@ function createWindow() {
   });
 
   watcher.on('change', () => {
+    console.log('detected changes');
+
     win.reload();
   });
 }
 
-app.whenReady().then(() => {
-  createWindow();
+try {
+  app.whenReady().then(() => {
+    createWindow();
 
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
+      }
+    });
   });
-});
+} catch (e) {
+  console.log('THIS IS AN ERROR', e);
+}
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

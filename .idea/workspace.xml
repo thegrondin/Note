@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63c69117-5c12-46c1-aeda-e476a9e38f3a" name="Changes" comment="Add Eslint with airbnb syntax configuration">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="63c69117-5c12-46c1-aeda-e476a9e38f3a" name="Changes" comment="Add eslint config file">
+      <change afterPath="$PROJECT_DIR$/src/containers/NoteEditor.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Notes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +70,7 @@
       <updated>1664319285011</updated>
       <workItem from="1664319287459" duration="7933000" />
       <workItem from="1664579045773" duration="5553000" />
-      <workItem from="1664646141041" duration="3134000" />
+      <workItem from="1664646141041" duration="9018000" />
     </task>
     <task id="LOCAL-00001" summary="Improve hot reload by using chokidar instead of electron-reloader">
       <created>1664646671182</created>
@@ -102,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664648940088</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add eslint config file">
+      <created>1664649322936</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664649322936</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +137,26 @@
     <MESSAGE value="Auto modify workspace.xml" />
     <MESSAGE value="Remove junk from preload" />
     <MESSAGE value="Add Eslint with airbnb syntax configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Eslint with airbnb syntax configuration" />
+    <MESSAGE value="Add eslint config file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add eslint config file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Layout.jsx</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Layout.jsx</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
