@@ -1,10 +1,10 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
+  entry: './src/index.jsx',
+  mode: 'development',
   devtool: 'eval-source-map',
   watch: true,
   module: {
@@ -12,24 +12,24 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env'] },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/dist/',
+    filename: 'bundle.js',
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "public/")
+      directory: path.join(__dirname, 'public/'),
     },
     port: 3000,
     compress: true,
@@ -38,5 +38,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new WriteFilePlugin({
       test: /^(?!.*(hot)).*/,
-    })]
+    })],
 };
